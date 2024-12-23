@@ -46,7 +46,7 @@
   }
 
   .options {
-    background-color: azure;
+    background-color: rgb(157, 0, 0);
     border-radius: 20px;
     display: flex;
     justify-content:left;
@@ -54,7 +54,7 @@
     transition: 0.2s;
     flex-direction:column;
     button {
-      margin: 30px;
+      margin: 15%;
       padding: 20px 35px 20px 35px;
       background-color:gray;
       border-radius: 30px;

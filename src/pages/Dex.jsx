@@ -1,7 +1,9 @@
 import React from "react";  
 import back from '../img/botao-voltar.png';
 import { useNavigate } from 'react-router-dom'; 
-import '../css/dex.css'; 
+import '../css/dex.css';
+import Pesquisa from "../components/pesquisa"; 
+import Dexs from '../components/dexs';
 function Dex() {
     const navigate = useNavigate();
 
@@ -9,18 +11,22 @@ function Dex() {
         <div>
             
             <div className="back">
-            <button onClick={() => (navigate('/'))}>
-                <img  src={back} width={20}/>
-            </button>
+                <button onClick={() => (navigate('/'))}>
+                     Voltar
+                </button>
             </div>
 
-            <div className="querybar">
 
+            <div className="boxDex">
+                <div className="querybar">
+                    <Pesquisa/>
+                </div>
             </div>
 
-            <div className="dex">
-
+            <div className="Dexs">
+                    <Dexs/>
             </div>
+            
         </div>
     );
 }
