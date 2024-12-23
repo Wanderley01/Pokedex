@@ -1,24 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+
+  .container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
   }
-  
-  html, body {
-    height: 100%;
-    width: 100%;
-    background-image: url(/src/img/Fundo.png);
-  }
-  
+
   .box {
-    background-color: aliceblue;
+    background-image: url(../img/fundodex.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 20px;
-    height: 600px;
-    width: 900px;
     transition: 0.2s;
+    display: flex;
+    justify-content: center;
   }
 
   .title {
+    margin-left: 10%;
     font-size: 30px;
     font-family: 'Press Start 2P';
     color: #ffcc00;
@@ -34,16 +33,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
+    margin-right: 5%;
+  }
+
+  .Char {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: auto;
     
   }
 
   .options {
+    background-color: azure;
+    border-radius: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    padding: 20px;
+    justify-content:left;
+    padding: 10px;
     transition: 0.2s;
+    flex-direction:column;
     button {
       margin: 30px;
       padding: 20px 35px 20px 35px;
