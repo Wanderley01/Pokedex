@@ -1,40 +1,45 @@
 import axios from "axios";
-import '../css/list.css';
-import { useState } from "react";
+import "../css/list.css";
+import { useEffect, useState } from "react";
 
 function List() {
+    const [pokelist, setPokelist] = useState([]);
 
-    const [pokemon, setPokemon] = useState([]);
+    useEffect(() => {
+        axios
+            .get('https://pokeapi.co/api/v2/pokemon?limit=151') // Exemplo para 151 Pokémon
+            .then(response => {
+                setPokelist(response.data.results);
+            })
+            .catch(err => {
+                console.error("Error fetching data: ", err);
+            });
+    }, []);
 
+    const getPokemonGif = (name) => {
+        return `https://play.pokemonshowdown.com/sprites/ani/${name.toLowerCase()}.gif`;
+    };
 
-    return(
-
+    return (
         <div className="boxList">
-            <div className="pkmn">
-                <h2>
-                    id
-                </h2>
-                <h2>Pikachu</h2>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu"/>
-                <h2>
-                    Tipo:
-                </h2>
-                <h3>
-                    Eletrico
-                </h3>
-
-                <div>
-                    <button className="more">
-                        Mais Detalhes
-                    </button>
-                </div>
-            </div>
+            {pokelist.length > 0 ? (
+                pokelist.map((pokemon) => (
+                    <div key={pokemon.name} className="pkmn">
+                        <h1>{pokemon.name}</h1>
+                        <img
+                            src={getPokemonGif(pokemon.name)}
+                            alt={`GIF de ${pokemon.name}`}
+                            onError={(e) => {
+                                e.target.src = "https://via.placeholder.com/20"; // Placeholder caso o GIF não exista
+                            }}
+                        />
+                    </div>
+                ))
+            ) : (
+                <p>Carregando...</p>
+            )}
         </div>
-
     );
 }
 
 export default List;
-
-
-

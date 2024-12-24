@@ -29,7 +29,8 @@ button {
 }
 
 .Dexs {
-    background-color: #2a75bb;
+    background-color: transparent;
     display: flex;
     justify-content: center;
+    
 }
