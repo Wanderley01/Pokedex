@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 function List() {
     const [pokelist, setPokelist] = useState([]);
 
+    
     useEffect(() => {
         axios
             .get('https://pokeapi.co/api/v2/pokemon?limit=151') // Exemplo para 151 Pokémon
@@ -26,6 +27,7 @@ function List() {
                 pokelist.map((pokemon) => (
                     <div key={pokemon.name} className="pkmn">
                         <h1>{pokemon.name}</h1>
+                        <h4></h4>
                         <img
                             src={getPokemonGif(pokemon.name)}
                             alt={`GIF de ${pokemon.name}`}

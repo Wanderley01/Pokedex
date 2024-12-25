@@ -26,3 +26,46 @@
 
   }
 }
+
+.resutado {
+  position: fixed; 
+  top: 50%;        
+  left: 50%;       
+  transform: translate(-50%, -50%); 
+  z-index: 9999;   
+  padding: 20px;
+  border-radius: 8px;
+
+  button{
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+}
+
+.pkmns {
+  background-color: gainsboro;
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 2%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.resutado {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
