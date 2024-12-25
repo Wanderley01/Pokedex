@@ -1,13 +1,11 @@
 import axios from "axios";
 import "../css/list.css";
 import { useEffect, useState } from "react";
-
-// Não sei usar async await muito bem então pedi para o Chat reformular e ele modificou tudo //
-
+import { useNavigate } from 'react-router-dom';
 
 function List() {
     const [pokelist, setPokelist] = useState([]);
-
+    const navigate = useNavigate();
     const Cor = {
         fire: "#FF4422",
         water: "#3399FF",
@@ -61,17 +59,18 @@ function List() {
             {pokelist.length > 0 ? (
                 pokelist.map((pokemon) => (
                     <div key={pokemon.id} className="pkmn">
-                        <h1>{pokemon.name}</h1>
-                        <h4 className="idnumero">ID: {pokemon.id}</h4>
-                        <img
-                            src={pokemon.gif}
-                            alt={`GIF de ${pokemon.name}`}
-                            onError={(e) => {
-                                e.target.src = "https://via.placeholder.com/20";
-                            }}
-
-                            
-                        />
+                            <h1>{pokemon.name}</h1>
+                            <h4 className="idnumero"> {pokemon.id}</h4>
+                            <img
+                                src={pokemon.gif}
+                                alt={`GIF de ${pokemon.name}`}
+                                onError={(e) => {
+                                    e.target.src = "https://via.placeholder.com/20";
+                                }}
+                            />
+                            <button  onClick={() => (<></>)}>
+                                <h6>Mais</h6>
+                            </button>
                         <p className="tipos">
                             {pokemon.types.map((type) => (
                                 <span

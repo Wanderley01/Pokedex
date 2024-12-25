@@ -1,13 +1,22 @@
-
-
 .boxList {
     background-color: transparent;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 1%;
-} 
-
+}
+.Link {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #2a75bb,
+        1px -1px 0 #2a75bb,
+        -1px 1px 0 #2a75bb,
+        1px 1px 0 #2a75bb;
+    transition: 0.3s;
+    
+}
 
 
 .pkmn {
@@ -33,11 +42,11 @@
     width: 305px;
     padding: 19px;
     color: #ffcc00;
-      text-shadow: 
-      -1px -1px 0 #2a75bb, 
-       1px -1px 0 #2a75bb, 
-      -1px  1px 0 #2a75bb, 
-       1px  1px 0 #2a75bb;
+    text-shadow:
+        -1px -1px 0 #2a75bb,
+        1px -1px 0 #2a75bb,
+        -1px 1px 0 #2a75bb,
+        1px 1px 0 #2a75bb;
 
 }
 
@@ -45,16 +54,16 @@
     font-size: 20px;
     margin-bottom: 10px;
     color: lightgray;
-    text-shadow: 
-      -1px -1px 0 #000000, 
-       1px -1px 0 #000000, 
-      -1px  1px 0 #000000, 
-       1px  1px 0 #000000;
-    
+    text-shadow:
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000000;
+
 }
 
 .tipos {
     font-size: 14px;
-    margin-top: 10px; 
-      
+    margin-top: 10px;
+
 }

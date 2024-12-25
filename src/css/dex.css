@@ -3,23 +3,24 @@
     padding: 1%;
     width: 10%;
     flex-direction: row;
+    button {
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+        border-radius: 10px;
+        padding: 10%;
+        margin: 10%;
+        color: #ffcc00;
+          text-shadow: 
+          -1px -1px 0 #2a75bb, 
+           1px -1px 0 #2a75bb, 
+          -1px  1px 0 #2a75bb, 
+           1px  1px 0 #2a75bb; /* Contorno azul */
+          font-size: 20px;
+    }
 }
 
-button {
-    width: 100%;
-    height: 100%;
-    background-color: gray;
-    border-radius: 10px;
-    padding: 10%;
-    margin: 10%;
-    color: #ffcc00;
-      text-shadow: 
-      -1px -1px 0 #2a75bb, 
-       1px -1px 0 #2a75bb, 
-      -1px  1px 0 #2a75bb, 
-       1px  1px 0 #2a75bb; /* Contorno azul */
-      font-size: 20px;
-}
+
 
 .boxDex {
     background-color: transparent;
@@ -33,4 +34,17 @@ button {
     display: flex;
     justify-content: center;
     
+}
+
+.skip {
+    display: flex;
+    justify-content:center;
+    padding: 1%;
+    background-color: lightgrey;
+    color: black;
+    border-radius: 10px;
+    width: 10%;
+    margin: 10px;
+    text-decoration: none;
+    color: inherit;
 }

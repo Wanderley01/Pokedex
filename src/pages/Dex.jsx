@@ -5,6 +5,7 @@ import '../css/dex.css';
 import Pesquisa from "../components/pesquisa"; 
 import Dexs from '../components/dexs';
 function Dex() {
+
     const navigate = useNavigate();
 
     return (
@@ -23,10 +24,18 @@ function Dex() {
                 </div>
             </div>
 
+
             <div className="Dexs">
                     <Dexs/>
             </div>
-            
+
+            <div className="panination">
+
+            </div>
+
+            <div className="skip">
+              <a href="#top">Ir para o topo</a>
+            </div>
         </div>
     );
 }

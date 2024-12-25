@@ -1,12 +1,13 @@
 import axios from "axios";
 import "../css/pesq.css";
 import { useState } from "react";
+
 // Coloquei o estilo aqui também, para ser mais águl eu sei o chat denovo
 
 
 function Pesquisa() {
-    const [pesq, setPesq] = useState(""); 
-    const [pokepesq, setPokepesq] = useState(null); 
+    const [pesq, setPesq] = useState("");
+    const [pokepesq, setPokepesq] = useState(null);
 
     const typeColors = {
         fire: "#FF4422",
@@ -54,6 +55,7 @@ function Pesquisa() {
         return `https://play.pokemonshowdown.com/sprites/ani/${name.toLowerCase()}.gif`;
     };
 
+
     return (
         <>
             <div className="Bar">
@@ -77,7 +79,7 @@ function Pesquisa() {
                         <button className="btn" onClick={fechar}>
                             x
                         </button>
-                        <h1 className="TitlePesq">{pokepesq.name}</h1>
+                        <h1 className="TitlePesq" onClick={''}>{pokepesq.name}</h1>
                         <img
                             className="imgpoke"
                             src={getPokemonGif(pokepesq.name)}
