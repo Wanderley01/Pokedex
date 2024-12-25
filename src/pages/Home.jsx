@@ -27,9 +27,6 @@ function Home() {
 
                 <div className="options">
                     <button onClick={() => (navigate('/Dex'))}>Pokemons</button>
-                    <button onClick={() => (navigate('/#'))}>nada</button>
-                    <button onClick={() => (navigate('/#'))}>nada</button>
-                    <button onClick={() => (navigate('/#'))}>nada</button>
                 </div>
             </div>
         </div>
