@@ -55,7 +55,7 @@
   button{
     background-color: rgb(97, 97, 97);
     width: 50px;
-    padding: 5px;
+    padding: 1px;
     border-radius: 100px;
     color: white;
     cursor: pointer;
@@ -88,4 +88,12 @@
   text-transform: capitalize;
 }
 
-
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4px;
+  button {
+    padding: 10px;
+  }
+}

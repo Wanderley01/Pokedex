@@ -5,19 +5,6 @@
     flex-wrap: wrap;
     margin: 1%;
 }
-.Link {
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-    text-shadow:
-        -1px -1px 0 #2a75bb,
-        1px -1px 0 #2a75bb,
-        -1px 1px 0 #2a75bb,
-        1px 1px 0 #2a75bb;
-    transition: 0.3s;
-    
-}
-
 
 .pkmn {
     background-color: gainsboro;
@@ -66,4 +53,28 @@
     font-size: 14px;
     margin-top: 10px;
 
+}
+
+.More {
+    background-color: brown;
+    padding: 2px 30px 2px 30px;
+    font-size: 15px;
+    border-radius: 20px;
+    
+}
+
+.page {
+    display: flex;
+    position:fixed;
+    margin-top: 450px;
+    
+    button {
+        color: white;
+        margin-right: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 }

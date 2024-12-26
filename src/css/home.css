@@ -46,33 +46,28 @@
   }
 
   .options {
-    background-color: rgb(157, 0, 0);
+    width: 220px;
+    height: 600px;
+    background-color: rgb(171, 0, 0);
     border-radius: 20px;
     display: flex;
-    justify-content:left;
+    justify-content:center;
     padding: 10px;
     transition: 0.2s;
-    flex-direction:column;
-    button {
-      margin: 15%;
-      padding: 20px 35px 20px 35px;
-      background-color:gray;
-      border-radius: 30px;
-      color: #ffcc00;
-      text-shadow: 
-      -1px -1px 0 #2a75bb, 
-       1px -1px 0 #2a75bb, 
-      -1px  1px 0 #2a75bb, 
-       1px  1px 0 #2a75bb; /* Contorno azul */
-      font-size: 20px;
-      transition: 0.2s;
-    } :hover {
-      transition: 0.2s;
-      background-color: #2a75bb;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-      padding: 26px 35px 26px 35px;
+    position: relative;
+    
+    button{
+      width: 100%;
+      background-image: url("../img/fundobtn.png");
+      background-position: center;
+      background-size: cover;
+      border-radius: 20px;
+      padding: 50px;
+    }
+
+    img:hover{
+      transition: 0.2s all;
+      padding: 10px;
     }
 
   }

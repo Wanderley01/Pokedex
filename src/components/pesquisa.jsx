@@ -69,7 +69,7 @@ function Pesquisa() {
                 </div>
 
                 <div className="btn">
-                    <button onClick={pesquisa}>Buscar</button>
+                    <button onClick={pesquisa}> 🔎 </button>
                 </div>
             </div>
 
@@ -79,8 +79,9 @@ function Pesquisa() {
                         <button className="btn" onClick={fechar}>
                             x
                         </button>
-                        <h1 className="TitlePesq" onClick={''}>{pokepesq.name}</h1>
+                        <h1 className="TitlePesq">{pokepesq.name}</h1>
                         <img
+                            onClick={() => { navigator('/')}}
                             className="imgpoke"
                             src={getPokemonGif(pokepesq.name)}
                             alt={pokepesq.name}

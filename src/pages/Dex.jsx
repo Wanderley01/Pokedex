@@ -34,7 +34,7 @@ function Dex() {
             </div>
 
             <div className="skip">
-              <a href="#top">Ir para o topo</a>
+              <a href="#top">🔼</a>
             </div>
         </div>
     );

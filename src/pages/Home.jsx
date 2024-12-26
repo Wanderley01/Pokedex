@@ -4,6 +4,8 @@ import "../css/home.css";
 import Red from "../img/Red.png";
 import { useNavigate } from 'react-router-dom';
 import char from "../img/char.png";
+import pokeboll from "../../public/pokeboll.png";
+
 
 function Home() {
 
@@ -22,11 +24,13 @@ function Home() {
                 </div>
 
                 <div className="foto">
-                    <img src={Red} alt="Red" width={100}/>
+                <img src={Red} alt="Red" width={100}/>
                 </div>
 
                 <div className="options">
-                    <button onClick={() => (navigate('/Dex'))}>Pokemons</button>
+                    <button onClick={() => (navigate('/Dex'))}>
+                        <img src={pokeboll} alt="Red" width={100}/>
+                    </button>
                 </div>
             </div>
         </div>

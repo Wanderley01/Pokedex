@@ -1,11 +1,12 @@
 import axios from "axios";
 import "../css/list.css";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import Pagina from "./pagina";
 
 function List() {
     const [pokelist, setPokelist] = useState([]);
-    const navigate = useNavigate();
+    
+
     const Cor = {
         fire: "#FF4422",
         water: "#3399FF",
@@ -27,8 +28,11 @@ function List() {
         fighting: "#BB5544",
     };
 
+
+
     const fetchPokemonDetails = async () => {
         try {
+
             const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
             const pokemonResults = response.data.results;
 
@@ -53,6 +57,8 @@ function List() {
     useEffect(() => {
         fetchPokemonDetails();
     }, []);
+    
+    
 
     return (
         <div className="boxList">
@@ -60,7 +66,7 @@ function List() {
                 pokelist.map((pokemon) => (
                     <div key={pokemon.id} className="pkmn">
                             <h1>{pokemon.name}</h1>
-                            <h4 className="idnumero"> {pokemon.id}</h4>
+                            <h4 className="idnumero">#{pokemon.id}</h4>
                             <img
                                 src={pokemon.gif}
                                 alt={`GIF de ${pokemon.name}`}
@@ -68,9 +74,6 @@ function List() {
                                     e.target.src = "https://via.placeholder.com/20";
                                 }}
                             />
-                            <button  onClick={() => (<></>)}>
-                                <h6>Mais</h6>
-                            </button>
                         <p className="tipos">
                             {pokemon.types.map((type) => (
                                 <span
@@ -93,7 +96,22 @@ function List() {
             ) : (
                 <p>Carregando...</p>
             )}
+
+            <div className="page">
+                <button onChange={<></>}>
+                    ◀️
+                </button>
+                    <h1>
+
+                    </h1>
+                <button onChange={<></>}>
+                    ▶️
+                </button>
+            </div>
+
         </div>
+
+        
     );
 }
 
