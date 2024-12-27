@@ -1,11 +1,13 @@
 import axios from "axios";
 import "../css/list.css";
 import { useEffect, useState } from "react";
-import Pagina from "./pagina";
+
+// aqui eu tive muita dificuldade e tive que pesquisar e usar o chat para resolver
 
 function List() {
     const [pokelist, setPokelist] = useState([]);
-    
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage] = useState(20);
 
     const Cor = {
         fire: "#FF4422",
@@ -28,16 +30,19 @@ function List() {
         fighting: "#BB5544",
     };
 
-
-
-    const fetchPokemonDetails = async () => {
+    const fetchAllPokemon = async () => {
         try {
+            let nextUrl = "https://pokeapi.co/api/v2/pokemon";
+            const allPokemon = [];
 
-            const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
-            const pokemonResults = response.data.results;
+            while (nextUrl) {
+                const response = await axios.get(nextUrl);
+                allPokemon.push(...response.data.results);
+                nextUrl = response.data.next; 
+            }
 
             const detailedPokemon = await Promise.all(
-                pokemonResults.map(async (pokemon) => {
+                allPokemon.map(async (pokemon) => {
                     const details = await axios.get(pokemon.url);
                     return {
                         id: details.data.id,
@@ -55,25 +60,39 @@ function List() {
     };
 
     useEffect(() => {
-        fetchPokemonDetails();
+        fetchAllPokemon();
     }, []);
-    
-    
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = pokelist.slice(indexOfFirstItem, indexOfLastItem);
+
+    const nextPage = () => {
+        if (currentPage < Math.ceil(pokelist.length / itemsPerPage)) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
 
     return (
         <div className="boxList">
-            {pokelist.length > 0 ? (
-                pokelist.map((pokemon) => (
+            {currentItems.length > 0 ? (
+                currentItems.map((pokemon) => (
                     <div key={pokemon.id} className="pkmn">
-                            <h1>{pokemon.name}</h1>
-                            <h4 className="idnumero">#{pokemon.id}</h4>
-                            <img
-                                src={pokemon.gif}
-                                alt={`GIF de ${pokemon.name}`}
-                                onError={(e) => {
-                                    e.target.src = "https://via.placeholder.com/20";
-                                }}
-                            />
+                        <h1>{pokemon.name}</h1>
+                        <h4 className="idnumero">#{pokemon.id}</h4>
+                        <img
+                            src={pokemon.gif}
+                            alt={`GIF de ${pokemon.name}`}
+                            onError={(e) => {
+                                e.target.src = "https://via.placeholder.com/20";
+                            }}
+                        />
                         <p className="tipos">
                             {pokemon.types.map((type) => (
                                 <span
@@ -98,20 +117,20 @@ function List() {
             )}
 
             <div className="page">
-                <button onChange={<></>}>
+                <button onClick={prevPage} disabled={currentPage === 1}>
                     ◀️
                 </button>
-                    <h1>
-
-                    </h1>
-                <button onChange={<></>}>
+                <h1>
+                    Página {currentPage} de {Math.ceil(pokelist.length / itemsPerPage)}
+                </h1>
+                <button
+                    onClick={nextPage}
+                    disabled={currentPage === Math.ceil(pokelist.length / itemsPerPage)}
+                >
                     ▶️
                 </button>
             </div>
-
         </div>
-
-        
     );
 }
 

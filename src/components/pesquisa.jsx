@@ -2,7 +2,7 @@ import axios from "axios";
 import "../css/pesq.css";
 import { useState } from "react";
 
-// Coloquei o estilo aqui também, para ser mais águl eu sei o chat denovo
+// Coloquei o estilo aqui também, para ser mais águl eu sei o chat denovo e tive algumas dificildades que precisei do chat como ajuda 
 
 
 function Pesquisa() {
